@@ -9,10 +9,12 @@
 * Install [SnipMate](http://www.vim.org/scripts/script.php?script_id=2540)
 * Put `xslt.snippet` in your SnipMate's `snippets/` dir
 * Restart Vim
-* Command `:set filetype=xslt` or,
-* have `filetype on` in your *.vimrc*
+* Call `:set filetype=xslt` or,
+* have `filetype on` in your *.vimrc* (recommended)
 
 ## Notes
+(See `xslt.snippets` for the actual snippets)
+
 * suffix 'd' = 'disable-ouput-escaping'
 * suffix 'l' = long, multi-line version
 
