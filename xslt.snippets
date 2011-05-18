@@ -1,0 +1,107 @@
+# XSLT Snippets for Vim's SnipMate Plugin
+# Author: Chris Batchelor, Firegoby Design
+# Install: -
+#   Put in your SnipMate's snippets/ dir
+#   :set filetype=xslt
+#      or
+#   'filetype on' in your .vimrc
+# Notes: -
+#   suffix 'd' = 'disable-ouput-escaping'
+#   suffix 'l' = long, multi-line version
+#
+# Elements
+snippet style
+	<?xml version="1.0" encoding="UTF-8"?>
+	<xsl:stylesheet version="1.0"
+		xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		${1}
+	</xsl:stylesheet>
+snippet include
+	<xsl:include href="${1}"/>
+snippet import
+	<xsl:import href="${1}"/>
+snippet tmatch
+	<xsl:template match="${1:data}">
+		${2}
+	</xsl:template>
+snippet tname
+	<xsl:template name="${1}">
+		${2}
+	</xsl:template>
+snippet apply
+	<xsl:apply-templates select="${1:data}"/>
+snippet applyl
+	<xsl:apply-templates select="${1:data}">
+		${2}
+	</xsl:apply-templates>
+snippet call
+	<xsl:call-template name="${1}">
+		${2}
+	</xsl:call-template>
+snippet elem
+	<xsl:element name="${1}">
+		${2}
+	</xsl:element>
+snippet attr
+	<xsl:attribute name="${1}">${2}</xsl:attribute>
+snippet txt
+	<xsl:text>${1}</xsl:text>
+snippet txtd
+	<xsl:text disable-output-escaping="yes">${1}</xsl:text>
+# Comments
+snippet com
+	<xsl:comment>${1}</xsl:comment>
+snippet cdata
+	<![CDATA[${1:replace}]]>
+# Values
+snippet vo
+	<xsl:value-of select="${1}"/>
+snippet vod
+	<xsl:value-of select="${1}" disable-output-escaping="yes"/>
+snippet co
+	<xsl:copy-of select="${1}"/>
+# Repetition
+snippet for
+	<xsl:for-each select="${1}">
+		${2}
+	</xsl:for-each>
+# Conditionals
+snippet if
+	<xsl:if test="${1}">
+		${2}
+	</xsl:if>
+snippet choose
+	<xsl:choose>
+		${1}
+	</xsl:choose>
+snippet when
+	<xsl:when test="${1}">
+		${2}
+	</xsl:when>
+snippet other
+	<xsl:otherwise>
+		${1}
+	<xsl:otherwise>
+# Sorting
+snippet sort
+	<xsl:sort select="${1}" order="${2:ascending}"/>
+# Variables
+snippet var
+	<xsl:variable name="${1}" select="${2}"/>
+snippet varl
+	<xsl:variable name="${1}">
+		${3}
+	</xsl:variable>
+# Parameters
+snippet param
+	<xsl:param name="${1}" select="${2}"/>
+snippet paraml
+	<xsl:param name="${1}">
+		${3}
+	</xsl:param>
+snippet with
+	<xsl:with-param name="${1}" select="${2}"/>
+snippet withl
+	<xsl:with-param name="${1}">
+		${2}
+	</xsl:with-param>
