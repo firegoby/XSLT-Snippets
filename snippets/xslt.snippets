@@ -30,6 +30,8 @@ snippet tname
 	</xsl:template>
 snippet apply
 	<xsl:apply-templates select="${1:data}"/>
+snippet applym
+	<xsl:apply-templates select="${1:data}" mode="${2}"/>
 snippet applyl
 	<xsl:apply-templates select="${1:data}">
 		${2}
@@ -107,3 +109,28 @@ snippet withl
 	<xsl:with-param name="${1}">
 		${2}
 	</xsl:with-param>
+# Support for Symphony CMS extension XSLResourceLoader and ilk
+snippet sympage
+	<?xml version="1.0" encoding="UTF-8"?>
+	<xsl:stylesheet version="1.0"
+		xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+		xmlns:res="http://symphony-cms.com/schemas/resources/1.0"
+		exclude-result-prefixes="res">
+	
+		<xsl:include href="../utilities/master.xsl"/>
+		
+		<res:data-source name="${1}"/>
+		
+		<xsl:template match="data">
+			${2}
+		</xsl:template>
+
+	</xsl:stylesheet>
+snippet symsection
+	<xsl:template match="*[section/@handle = '${1}']/entry" mode='${2}'>
+		${3}
+	</xsl:template>
+snippet symds
+	<res:data-source name="${1}"/>
+snippet symev
+	<res:event name="${1}"/>
